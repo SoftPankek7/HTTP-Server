@@ -1,2 +1,1 @@
-OPEN webserver.py FIRST - IT WILL RUN YOUR SERVER
-OPEN INDEX.HTML - IT IS THE MANUAL / HELP FILE!!!
+You might want to start with opening index.html on its own.
