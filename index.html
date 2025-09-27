@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SSWS Manual / Example Page</title>
+        <style>
+            body {
+                font-family: 'Courier New', Courier, monospace;
+                background-color: #222;
+                background-image: linear-gradient(to bottom, #ce4b00, #0d0d0d 5%);
+                color: #868686;
+            }
+            h1 {
+                color: #000000;
+            }
+            code {
+                background-color: #222;
+                color: #cca;
+                font-family: Ubuntu, Consolas, Monospace;
+                padding: 2px 4px;
+                border-radius: 0.5em;
+                margin: 0;
+            }
+            fieldset {
+                margin-top: 1em;
+                padding: 1em;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 style="padding-bottom: 0px; align-self: center; align-content: center;">CSWS Version 1.03D Guide</h1>
+        <h6 style="padding-top: 0px;">(Charlies's Simple Web Server)</h6>
+        <h3>Introduction</h3>
+        <p>Hopefully, you should see this:</p>
+        <ol>
+            <li>When running the script for the first time w/o changing the index</li>
+            <li>When editing the index html file</li>
+        </ol>
+        <h3>Quickstart Guide</h3>
+        <p>You should see this directory containing:<br><br><code>index.html</code>, <code>error/</code>, <code>webserver.py</code></p>
+        <p>Put your index in index.html, as usual.</p>
+        <p>Put your HTTP errors in <code>error/</code> (403 & 404 only supported so far)</p>
+        <p>Run <code>webserver.py</code> to launch the webserver. <b>PLEASE NOTE: IT CAN BE EASILY ACCESSED! SIMPLY BY <code>localhost:8080/webserver.py</code></b></p>
+
+        <h3>How to start up HTTP error managment</h3>
+        <p>There are some easy steps to follow:</p>
+        <ol>
+            <li>Enter your directory</li>
+            <li>Create / Ensure there is a folder named 'error'.</li>
+            <li>Create HTML files for your HTTP error. E.g: <code>404</code> error would be <code>404.html</code></li>
+            <li>Open <code>webserver.py</code> (or whatever you named your webserver controller to be)</li>
+            <li>Set the "<code>Use HTTP errors in error/httpname.html</code>" setting to be <code>True</code>.</li>
+            <li>Test it out by entering a false webpage.</li>
+        </ol>
+        <h3>Features</h3>
+        <ol>
+            <li>Allows using [website]/ and [website] rather than fully entering [website]/index.html</li>
+            <li>It is very minimal</li>
+            <li>Supports custom 404 & 403 HTTP error pages</li>
+            <li>Quickly shut off server with CTRL+C - as a built in Panic Button</li>
+            <li>Very dynamic and easy to modify</li>
+            <li>Easy to understand & set-up</li>
+            <li>Allows Localhost, Local IP and custom hostnames</li>
+            <li>No external modules needed</li>
+            <li><b>NO CODE WAS GENERATED WITH CHATGPT OR ANY AI!</b></li>
+        </ol>
+        <h3>Credits / Acknowledgements</h3>
+        <fieldset>
+            <legend>Websites</legend>
+            <ol>
+                <li>pythonbasics.org</li>
+                <li>w3schools.com</li>
+                <li>stackoverflow.com</li>
+                <li>wikipedia.org</li>
+                <li>github.com</li>
+            </ol>
+        </fieldset>
+        <fieldset>
+            <legend>People</legend>
+            <p>Nobody yet... Be the first!</p>
+        </fieldset>
+        <fieldset>
+            <legend>Python Modules / Libraries</legend>
+            <ol>
+                <li>http.server</li>
+                <li>os</li>
+                <li>socket</li>
+            </ol>
+            <p><b>0 EXTERNAL MODULES!</b></p>
+        </fieldset>
+    </body>
+</html>
