@@ -67,7 +67,7 @@ class SERVER(BaseHTTPRequestHandler):
                     served_file_contents = served_file.read()
                     self.wfile.write(served_file_contents)
                 except FileNotFoundError:
-                    self.send_response(403)
+                    self.send_response(404)
                     self.send_header("Content-type", "text/html")
                     self.end_headers()
         except PermissionError:
@@ -96,4 +96,5 @@ try:
 except KeyboardInterrupt:
     webServer.server_close()
     print("Server stopped.")
+
     clear()
