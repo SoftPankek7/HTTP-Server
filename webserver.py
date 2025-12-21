@@ -38,7 +38,6 @@ while True:
 
 clear()
 script_dir = os.getcwd()
-# script_dir = os.path.dirname(os.path.abspath(__file__)) + "\\" if os.name == "nt" else "/"
 print("Script Directory:  " + script_dir)
 
 class SERVER(BaseHTTPRequestHandler):
