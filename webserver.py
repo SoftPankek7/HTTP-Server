@@ -37,7 +37,8 @@ while True:
         print(f"Please enter a valid setting. Error: {e}")
 
 clear()
-script_dir = os.path.dirname(os.path.abspath(__file__)) + "\\" if os.name == "nt" else "/"
+script_dir = os.getcwd()
+# script_dir = os.path.dirname(os.path.abspath(__file__)) + "\\" if os.name == "nt" else "/"
 print("Script Directory:  " + script_dir)
 
 class SERVER(BaseHTTPRequestHandler):
@@ -58,18 +59,13 @@ class SERVER(BaseHTTPRequestHandler):
                 self.send_header("Content-type", "text/html")
                 self.end_headers()
             else:
-                try:
-                    print("( 404 ) Trying to fetch " + script_dir + self.path)
-                    served_file = open(script_dir + "error"+ "\\" if os.name == "nt" else "/"+ "404.html", "rb")
-                    self.send_response(200)
-                    self.send_header("Content-type", "text/html")
-                    self.end_headers()
-                    served_file_contents = served_file.read()
-                    self.wfile.write(served_file_contents)
-                except FileNotFoundError:
-                    self.send_response(403)
-                    self.send_header("Content-type", "text/html")
-                    self.end_headers()
+                print("( 404 ) Trying to fetch " + script_dir + self.path)
+                served_file = open(script_dir + "error"+ "\\" if os.name == "nt" else "/"+ "404.html", "rb")
+                self.send_response(404)
+                self.send_header("Content-type", "text/html")
+                self.end_headers()
+                served_file_contents = served_file.read()
+                self.wfile.write(served_file_contents)
         except PermissionError:
             if not usecustomerrors:
                 self.send_response(403)
